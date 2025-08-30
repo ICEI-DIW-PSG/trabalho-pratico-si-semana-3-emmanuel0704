@@ -16,6 +16,9 @@
     --ff-base: "Hanken Grotesk", "HK Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --ff-heading: "Anton", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     --ff-menu: "Canva Sans", "Montserrat", "Poppins", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --hero-h1: clamp(56px, 9vw, 120px);
+    --hero-sub: clamp(18px, 2.4vw, 28px);
+    --hero-btn: clamp(15px, 1.25vw, 18px);
 }
 
 *{box-sizing: border-box;}
@@ -128,8 +131,6 @@ html {
 .capa {
     position: relative;
     min-height: 100vh;
-    display: grid;
-    place-items: center;
     text-align: center;
     background: url(imgs/dumbell.png) center/cover no-repeat;
     isolation: isolate;
@@ -146,8 +147,14 @@ html {
 }
 
 .capa-wrap {
-    max-width: 900px;
+    max-width: 980px;
     padding-inline: 20px;
+    min-height: calc(100vh - var(--header-h) - 12px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
 }
 
 .capa h1 {
@@ -155,13 +162,19 @@ html {
     font-style: italic;
     font-synthesis: style;
     font-weight: 400;
-    letter-spacing: .02em;
     text-transform: uppercase;
+    font-size: var(--hero-h1);
+    line-height: 1.03;
+    letter-spacing: .02em;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, .4);
+    margin: auto 0 6px 0;
 }
 
 .capa p {
     color: var(--muted);
-    margin: 0 0 22px 0;
+    font-size: var(--hero-sub);
+    margin: 0;
+    max-width: 860px;
 }
 
 /* Botões */
@@ -186,9 +199,31 @@ html {
 
 /* Este bloco a centraliza e dá espaçamento para a imagem da seta. */
 
+.capa-cta{
+    margin-top: auto;
+}
+
+.capa-cta .btn-primario {
+    font-size: clamp(16px, 1.4vw, 20px);
+    padding: 1rem 1.8rem;
+    border-radius: 999px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .35);
+}
+
 .scroll-down {
-    display: inline-block;
-    margin-top: 16px;
+    margin-top: 12px;
+    padding-bottom: 40px;
+}
+
+.scroll-down img {
+    width: clamp(60px, 7.5vw, 100px);
+    opacity: .9;
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+.scroll-down:hover img {
+    transform: translateY(6px);
+    opacity: 1;
 }
 
 /* =========================================================
