@@ -57,12 +57,12 @@ html {
 ========================================================= */
 
 .site-header {
-    position: sticky;
+    position: static;
     top: 0;
-    z-index: 10;
-    background: rgba(12, 12, 14, .72);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    background: transparent;
+    backdrop-filter: none;
+    border: 0;
 }
 
 .header-wrap {
@@ -77,21 +77,31 @@ html {
     display: block;
 }
 
-.main nav ul {
+.main-nav ul {
     list-style: none;
     display: flex;
-    gap: 24px;
+    gap: 28px;
     padding: 0;
     margin: 0;
+    align-items: center;
 }
 
 .main-nav a {
     color: var(--text);
-    opacity: .9;
+    opacity: .95;
+    transition: color .2s ease, opacity .2s ease;
 }
 
-.main-nav a:hover {
-    color: var(--brand)
+.main-nav a:hover{
+    color: var(--brand);
+    opacity: 1;
+    outline: none;
+}
+
+.main-nav a:focus-visible {
+    color: var(--brand);
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
 }
 
 /* =========================================================
@@ -147,7 +157,7 @@ html {
 
 .btn-primario {
     background: var(--brand);
-    color: 0b0c0e;
+    color: #0b0c0e;
 }
 
 .btn-outline {
@@ -289,7 +299,7 @@ html {
     padding: 18px;
 }
 
-sidebar h2 {
+.sidebar h2 {
     color: var(--brand);
     font-size: var(--h2);
     text-transform: uppercase;
