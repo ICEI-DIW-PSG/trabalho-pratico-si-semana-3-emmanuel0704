@@ -19,9 +19,9 @@
             <nav class="main-nav" aria-label="Navegação principal">
                 <ul>
                     <li><a href="#inicio">Início</a></li>
-                    <li><a href="#categorias">Temas</a></li>
-                    <li><a href="destaques">Vídeo aulas</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="conteudos.html">Conteúdos</a></li>
+                    <li><a href="categorias.html">Categorias</a></li>
+                    <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -47,33 +47,35 @@
 
     <main id="conteudo" class="content-bg" aria-labelledby="ttl-destaques">
         <div class="container grid">
-            <h2 id="ttl-destaques">Posts em destaque</h2>
+            <section id="destaques" class="featured" aria-labelledby="ttl-destaques">
+                <h2 id="ttl-destaques">Posts em destaque</h2>
 
-            <div class="cards">
-                <!-- Card 1 -->
-                <article class="card">
-                    <a href="#" class="card-thumb" aria-label="Abrir post destaque 1">
-                        <img src="imgs/display-frame.png" alt="Miniatura do post destaque 1">
-                    </a>
-                    <div class="card-body">
-                        <h3>Treino de Força - Iniciante</h3>
-                        <p>5 min de leitura • YouTube embutido</p>
-                        <a href="#" class="more">Saiba mais</a>
-                    </div>
-                </article>
+                <div class="cards">
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <a href="#" class="card-thumb" aria-label="Abrir post destaque 1">
+                            <img src="imgs/display-frame.png" alt="Miniatura do post destaque 1">
+                        </a>
+                        <div class="card-body">
+                            <h3>Treino de Força - Iniciante</h3>
+                            <p>5 min de leitura • YouTube embutido</p>
+                            <a href="#" class="more">Saiba mais</a>
+                        </div>
+                    </article>
 
-                <!-- Card 2 -->
-                <article class="card">
-                    <a href="#" class="card-thumb" aria-label="Abrir post destaque 2">
-                        <img src="imgs/display-frame.png" alt="Miniatura do post destaque 2">
-                    </a>
-                    <div class="card-body">
-                        <h3>Mobilidade para agachamento</h3>
-                        <p>4 min de leitura • Série prática</p>
-                        <a href="#" class="more">Saiba mais</a>
-                    </div>
-                </article>
-            </div>
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <a href="#" class="card-thumb" aria-label="Abrir post destaque 2">
+                            <img src="imgs/display-frame.png" alt="Miniatura do post destaque 2">
+                        </a>
+                        <div class="card-body">
+                            <h3>Mobilidade para agachamento</h3>
+                            <p>4 min de leitura • Série prática</p>
+                            <a href="#" class="more">Saiba mais</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
 
             <!-- Lista de posts -->
             <section class="post-list" aria-labelledby="ttl-lista">
@@ -120,6 +122,9 @@
                         </article>
                     </li>
                 </ul>
+                <p class="see-all">
+                    <a href="conteudos.html" class="btn btn-outline">Ver mais conteúdos</a>
+                </p>
             </section>
 
             <!-- ==== CATEGORIAS ==== -->
@@ -128,11 +133,11 @@
                 <h2 id="ttl-categorias">Categorias</h2>
                 <nav class="cat" aria-label="Lista de categorias">
                     <ul>
-                        <li href="#">Força</li>
-                        <li href="#">Hipertrofia</li>
-                        <li href="#">Mobilidade</li>
-                        <li href="#">Nutrição</li>
-                        <li href="#">Planejamento</li>
+                        <li href="conteudos.html?cat=forca">Força</li>
+                        <li href="conteudos.html?cat=hipertrofia">Hipertrofia</li>
+                        <li href="conteudos.html?cat=mobilidade">Mobilidade</li>
+                        <li href="conteudos.html?cat=nutricao">Nutrição</li>
+                        <li href="conteudos.html?cat=planejamento">Planejamento</li>
                     </ul>
                 </nav>
 

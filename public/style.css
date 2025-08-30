@@ -1,3 +1,342 @@
-body {
-    background-color: rgb(255, 255, 255);
+:root {
+    --bg: #0c0c0e;
+    --bg-soft: #121316;
+    --text: #f3f4f8;
+    --muted: #b9bfd1;
+    --brand: #ffd232;
+    --accent: #ff3333;
+    --border: #232634;
+    --radius: 16px;
+    --shadow: 0 12px 36px rgba(0, 0, 0, .45);
+    --container: 1180px;
+    --g: 24px;
+    --h1: clamp(40px, 6vw, 42px);
+    --h2: clamp(24px, 3.5vw, 42px);
+    --h3: clamp(18px, 2vw, 24px);
 }
+
+*{box-sizing: border-box;}
+html, body {height: 100%;}
+
+body {
+    margin: 0;
+    font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    color: var(--text);
+    background: var(--bg);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: 20px;
+}
+
+.visually-hidden {
+    position: absolute!important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    overflow: hidden;
+}
+
+/* =========================================================
+   Header
+========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(12, 12, 14, .72);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 14px;
+}
+
+.brand img {
+    display: block;
+}
+
+.main nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav a {
+    color: var(--text);
+    opacity: .9;
+}
+
+.main-nav a:hover {
+    color: var(--brand)
+}
+
+/* =========================================================
+   Capa
+========================================================= */
+
+.capa {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background: url(imgs/dumbell.png) center/cover no-repeat fixed;
+    isolation: isolate;
+}
+
+.capa::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .55));
+    z-index: -1;
+}
+
+.capa-wrap {
+    max-width: 900px;
+    padding-inline: 20px;
+}
+
+.capa h1 {
+    margin: 0 0 8px 0;
+    font-size: var(--h1);
+    line-height: 1.05;
+    text-transform: uppercase;
+    font-weight: 1000;
+    letter-spacing: .5px;
+}
+
+.capa p {
+    color: var(--muted);
+    margin: 0 0 22px 0;
+}
+
+/* Botões */
+
+.btn {
+    display: inline-block;
+    padding: .9rem 1.25rem;
+    border-radius: 999px;
+    font-weight: 700;
+    border: 2px solid var(--brand);
+}
+
+.btn-primario {
+    background: var(--brand);
+    color: 0b0c0e;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--brand);
+}
+
+/* Este bloco a centraliza e dá espaçamento para a imagem da seta. */
+
+.scroll-down {
+    display: inline-block;
+    margin-top: 16px;
+}
+
+/* =========================================================
+   Área de conteúdo (parte de baixo) com outro background
+========================================================= */
+
+.content-bg {
+    background: url(imgs/smoky.jpg) center/cover no-repeat;
+    border-top: 1px solid var(--border);
+    padding-block: 50px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.6fr .9fr;
+    gap: var(--g);
+    align-items: start;
+}
+
+/* =========================================================
+   Destaques e cards
+========================================================= */
+
+.featured h2 {
+    color: var(--brand);
+    font-size: var(--h2);
+    text-transform: uppercase;
+    margin: 0 0 14px 0;
+    letter-spacing: 0.2em;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--g);
+    margin-bottom: 28px;
+}
+
+.card {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.card-thumb img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 14px 16px 18px;
+}
+
+.card-body h3 {
+    margin: 0 0 6px 0;
+    font-size: var(--h3);
+}
+
+.card-body p {
+    margin: 0 0 10px 0;
+    color: var(--muted);
+}
+
+/* =========================================================
+   Lista de posts (mini cards)
+========================================================= */
+
+.post-list h3 {
+    color: var(--brand);
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+}
+
+.posts {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--g);
+    padding: 0;
+    margin: 0;
+}
+
+.mini {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 12px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px;
+}
+
+.mini-thumb {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+.mini strong {
+    display: block;
+    line-height: 1.25;
+}
+
+.mini small {
+    color: var(--muted);
+    line-height: 1.25;
+}
+
+.see-all {
+    margin-top: 18px;
+}
+
+/* =========================================================
+   Sidebar (categorias + citação)
+========================================================= */
+
+.sidebar {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+}
+
+sidebar h2 {
+    color: var(--brand);
+    font-size: var(--h2);
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.cat ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cat a {
+    display: block;
+    padding: 10px 12px;
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+}
+
+.cat a:hover {
+    border-color: var(--brand);
+}
+
+.quote {
+    margin-top: 18px;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+    color: var(--muted);
+}
+
+.quote blockquote {
+    margin: 8px 0 4px 0;
+    font-style: italic;
+}
+
+/* =========================================================
+   Rodapé
+========================================================= */
+
+.site-footer {
+    margin-top: 50px;
+    border-top: 1px solid var(--border);
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, .03));
+}
+
+.site-footer .container {
+    padding-block: 22px;
+    color: var(--muted);
+}
+
