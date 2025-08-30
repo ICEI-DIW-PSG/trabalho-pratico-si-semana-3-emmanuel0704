@@ -1,12 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fit Web • Treining Hub</title>
+    <meta name="description" content="Blog com vídeo aulas e posts sobre musculação">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <!-- ================= Cabeçalho ================= -->
+
+    <header class="site-header" id="topo" aria-label="Cabeçalho">
+        <div class="container header-wrap">
+            <a href="#inicio" class="brand" aria-label="Fit Web - Página Inicial">
+                <img src="imgs/logo.png" alt="Fit Web - Treining Hub" width="250">
+            </a>
+
+            <nav class="main-nav" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#categorias">Temas</a></li>
+                    <li><a href="destaques">Vídeo aulas</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<!-- ================= CAPA ================= -->
+
+    <section id="inicio" class="capa" aria-label="Capa do Site">
+        <div class="container capa-wrap">
+            <h1>Seja seu melhor</h1>
+            <p>Seu espaço para <strong>aprendizado, motivação e evolução constante</strong></p>
+
+            <div class="capa-cta">
+                <a class="btn btn-primario" href="#conteudo">Comece agora a sua jornada</a>
+            </div>
+            <a class="scroll-down" href="#conteudo" aria-label="Ir para o conteúdo">
+                <img src="imgs/seta-baixo.png" alt="Seta para baixo" width="100">
+            </a>
+        </div>
+    </section>
+
+    <!-- ================= CONTEÚDO ================= -->
+
+    <main id="conteudo" class="content-bg" aria-labelledby="ttl-destaques">
+        <div class="container grid">
+            <h2 id="ttl-destaques">Posts em destaque</h2>
+
+            <div class="cards">
+                <!-- Card 1 -->
+                <article class="card">
+                    <a href="#" class="card-thumb" aria-label="Abrir post destaque 1">
+                        <img src="imgs/display-frame.png" alt="Miniatura do post destaque 1">
+                    </a>
+                    <div class="card-body">
+                        <h3>Treino de Força - Iniciante</h3>
+                        <p>5 min de leitura • YouTube embutido</p>
+                        <a href="#" class="more">Saiba mais</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <a href="#" class="card-thumb" aria-label="Abrir post destaque 2">
+                        <img src="imgs/display-frame.png" alt="Miniatura do post destaque 2">
+                    </a>
+                    <div class="card-body">
+                        <h3>Mobilidade para agachamento</h3>
+                        <p>4 min de leitura • Série prática</p>
+                        <a href="#" class="more">Saiba mais</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Lista de posts -->
+            <section class="post-list" aria-labelledby="ttl-lista">
+                <h3 id="ttl-lista">Lista de posts</h3>
+                <ul class="posts">
+                    <li>
+                        <article class="mini">
+                            <img src="imgs/frame.png" alt="Thumb do post" class="mini-thumb">
+                            <div>
+                                <strong>Como progredir cargas</strong>
+                                <small>Métodos simples para evoluir.</small>
+                                <a href="#" class="more">Saiba mais</a>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="mini">
+                            <img src="imgs/frame.png" alt="Thumb do post" class="mini-thumb">
+                            <div>
+                                <strong>Como progredir cargas</strong>
+                                <small>Métodos simples para evoluir.</small>
+                                <a href="#" class="more">Saiba mais</a>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="mini">
+                            <img src="imgs/frame.png" alt="Thumb do post" class="mini-thumb">
+                            <div>
+                                <strong>Como progredir cargas</strong>
+                                <small>Métodos simples para evoluir.</small>
+                                <a href="#" class="more">Saiba mais</a>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="mini">
+                            <img src="imgs/frame.png" alt="Thumb do post" class="mini-thumb">
+                            <div>
+                                <strong>Como progredir cargas</strong>
+                                <small>Métodos simples para evoluir.</small>
+                                <a href="#" class="more">Saiba mais</a>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- ==== CATEGORIAS ==== -->
+
+            <aside id="categorias" class="sidebar" aria-labelledby="ttl-categorias">
+                <h2 id="ttl-categorias">Categorias</h2>
+                <nav class="cat" aria-label="Lista de categorias">
+                    <ul>
+                        <li href="#">Força</li>
+                        <li href="#">Hipertrofia</li>
+                        <li href="#">Mobilidade</li>
+                        <li href="#">Nutrição</li>
+                        <li href="#">Planejamento</li>
+                    </ul>
+                </nav>
+
+                <!-- Espaço extra para frase -->
+
+                <section class="quote">
+                    <h3 class="visually-hidden">Motivação</h3>
+                    <blockquote>
+                        "O verdadeiro progresso acontece quando você sai da zona de conforto"
+                    </blockquote>
+                    <cite>- Dorian Yates</cite>
+                    <p><a href="#destaques" class="btn btn-outline">Ver vídeo aulas</a></p>
+                </section>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ================= Rodape ================= -->
+
+    <footer id="contato" class="site-footer">
+        <div class="container">
+            <p>© Arthur Emmanuel Oliveira Marinho</p>
+            <address>
+                <a href="mailto:arthur.emmanuel0704@gmail.com">arthur.emmanuel0704@gmail.com</a>
+            </address>
+        </div>
+    </footer>
 </body>
 </html>
