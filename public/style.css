@@ -13,6 +13,9 @@
     --h1: clamp(40px, 6vw, 42px);
     --h2: clamp(24px, 3.5vw, 42px);
     --h3: clamp(18px, 2vw, 24px);
+    --ff-base: "Hanken Grotesk", "HK Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --ff-heading: "Anton", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    --ff-menu: "Canva Sans", "Montserrat", "Poppins", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 *{box-sizing: border-box;}
@@ -20,7 +23,9 @@ html, body {height: 100%;}
 
 body {
     margin: 0;
-    font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    font-family: var(--ff-base);
+    font-size: 16px;
+    line-height: 1.6;
     color: var(--text);
     background: var(--bg);
 }
@@ -56,9 +61,18 @@ html {
    Header
 ========================================================= */
 
+:root {
+    --header-h: 96px;
+}
+
+.site-header .container {
+    max-width: none;
+    width: 100%;
+    padding-inline: 40px;
+}
+
 .site-header {
-    position: static;
-    top: 0;
+    position: relative;
     z-index: 1000;
     background: transparent;
     backdrop-filter: none;
@@ -70,38 +84,41 @@ html {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    padding-block: 14px;
+    height: var(--header-h);
+    padding-block: 0px;
 }
 
 .brand img {
     display: block;
+    width: 300px;
+    height: auto;
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 28px;
+    gap: 36px;
     padding: 0;
     margin: 0;
     align-items: center;
 }
 
 .main-nav a {
+    font-family: var(--ff-menu);
     color: var(--text);
     opacity: .95;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+    padding: .35rem .25rem;
     transition: color .2s ease, opacity .2s ease;
 }
 
-.main-nav a:hover{
-    color: var(--brand);
-    opacity: 1;
-    outline: none;
-}
-
-.main-nav a:focus-visible {
-    color: var(--brand);
-    outline: 2px solid var(--brand);
-    outline-offset: 2px;
+.main-nav a:hover,
+.main-nav a:focus-visible{
+  color: var(--brand);
+  opacity: 1;
+  outline: none;
 }
 
 /* =========================================================
@@ -114,8 +131,10 @@ html {
     display: grid;
     place-items: center;
     text-align: center;
-    background: url(imgs/dumbell.png) center/cover no-repeat fixed;
+    background: url(imgs/dumbell.png) center/cover no-repeat;
     isolation: isolate;
+    margin-top: calc(var(--header-h) * -1);
+    padding-top: calc(var(--header-h) + 12px);
 }
 
 .capa::before {
@@ -132,12 +151,12 @@ html {
 }
 
 .capa h1 {
-    margin: 0 0 8px 0;
-    font-size: var(--h1);
-    line-height: 1.05;
+    font-family: var(--ff-heading);
+    font-style: italic;
+    font-synthesis: style;
+    font-weight: 400;
+    letter-spacing: .02em;
     text-transform: uppercase;
-    font-weight: 1000;
-    letter-spacing: .5px;
 }
 
 .capa p {
@@ -228,8 +247,8 @@ html {
 }
 
 .card-body h3 {
-    margin: 0 0 6px 0;
-    font-size: var(--h3);
+    font-family: var(--ff-base);
+    font-weight: 700;
 }
 
 .card-body p {
