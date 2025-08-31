@@ -378,6 +378,21 @@ html {
     text-align: center;
 }
 
+.see-all .btn {
+    background: transparent;
+    color: var(--brand);
+    border-color: var(--brand);
+    transition: transform .18s ease, background-color .18s ease, color .18s ease, box-shadow .18s ease;
+}
+
+.see-all .btn:hover, .seeall .btn:focus-visible {
+    background: var(--brand);
+    color: #0b0c0e;
+    transform: translateY(-1px) scale(1.06);
+    box-shadow: 0 12px 30px rgba(255, 210, 50, .32);
+    outline: none;
+}
+
 /* =========================================================
    Sidebar (categorias + citação)
 ========================================================= */
