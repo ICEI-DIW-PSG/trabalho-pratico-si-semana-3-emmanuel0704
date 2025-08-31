@@ -8,7 +8,7 @@
     --border: #232634;
     --radius: 16px;
     --shadow: 0 12px 36px rgba(0, 0, 0, .45);
-    --container: 1180px;
+    --container: 1480px;
     --g: 24px;
     --h1: clamp(40px, 6vw, 42px);
     --h2: clamp(24px, 3.5vw, 42px);
@@ -19,6 +19,11 @@
     --hero-h1: clamp(56px, 9vw, 120px);
     --hero-sub: clamp(18px, 2.4vw, 28px);
     --hero-btn: clamp(15px, 1.25vw, 18px);
+    --card-bg: rgba(18, 19, 22, .28);
+    --card-bg-hover: rgba(18, 19, 22, .45);
+    --card-br: 14px;
+    --card-border: rgba(255,51, 51, .45);
+    --card-border-hover: rgba(255, 51, 51, .48);
 }
 
 *{box-sizing: border-box;}
@@ -45,7 +50,7 @@ html {
 .container {
     max-width: var(--container);
     margin-inline: auto;
-    padding-inline: 20px;
+    padding-inline: clamp(16px, 3vw, 40px);
 }
 
 .visually-hidden {
@@ -231,21 +236,28 @@ html {
 ========================================================= */
 
 .content-bg {
+    min-height: 100vh;
     background: url(imgs/smoky.jpg) center/cover no-repeat;
     border-top: 1px solid var(--border);
-    padding-block: 50px;
+    padding-block: 50px 12px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 1.6fr .9fr;
-    gap: var(--g);
-    align-items: start;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 32px;
+    align-items: stretch;
 }
 
 /* =========================================================
    Destaques e cards
 ========================================================= */
+
+.featured {
+    grid-column: 1;
+    grid-row: 1;
+}
 
 .featured h2 {
     color: var(--brand);
@@ -253,27 +265,35 @@ html {
     text-transform: uppercase;
     margin: 0 0 14px 0;
     letter-spacing: 0.2em;
+    margin-left: 0;
 }
 
 .cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--g);
-    margin-bottom: 28px;
+    gap: 20px;
+    margin-bottom: 24px;
 }
 
 .card {
-    background: var(--bg-soft);
-    border: 1px solid var(--border);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
     overflow: hidden;
+    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.card:hover {
+    background: var(--card-bg-hover);
+    border-color: var(--card-border-hover);
+    transform: translateY(-2px);
 }
 
 .card-thumb img {
     width: 100%;
     display: block;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 2 / 1;
     object-fit: cover;
 }
 
@@ -295,17 +315,25 @@ html {
    Lista de posts (mini cards)
 ========================================================= */
 
+.post-list {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: 8px;
+    text-align: center;
+}
+
 .post-list h3 {
     color: var(--brand);
     text-transform: uppercase;
-    margin: 0 0 10px 0;
+    margin: 4px 0 14px 0;
 }
 
 .posts {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--g);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    justify-content: center;
+    gap: 18px;
     padding: 0;
     margin: 0;
 }
@@ -314,10 +342,17 @@ html {
     display: grid;
     grid-template-columns: 64px 1fr;
     gap: 12px;
-    background: var(--bg-soft);
-    border: 1px solid var(--border);
-    border-radius: 14px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--card-br);
     padding: 12px;
+    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.mini:hover {
+    background: var(--card-bg-hover);
+    border-color: var(--card-border-hover);
+    transform: translateY(-1px);
 }
 
 .mini-thumb {
@@ -340,6 +375,7 @@ html {
 
 .see-all {
     margin-top: 18px;
+    text-align: center;
 }
 
 /* =========================================================
@@ -347,34 +383,68 @@ html {
 ========================================================= */
 
 .sidebar {
-    background: var(--bg-soft);
-    border: 1px solid var(--border);
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    grid-column: 2;
+    grid-row: 1;
+    background: none;
+    border: 0;
     border-radius: var(--radius);
-    padding: 18px;
+    padding: 0;
+    backdrop-filter: blur(2px);
+    width: 92%;
+    margin-inline: auto;
+    text-align: center;
 }
 
 .sidebar h2 {
     color: var(--brand);
     font-size: var(--h2);
     text-transform: uppercase;
-    margin-top: 0;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.sidebar .cat {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 18px;
+    backdrop-filter: blur(2px);
+}
+
+.cat {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .cat ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 .cat a {
-    display: block;
-    padding: 10px 12px;
-    border: 1px dashed var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    padding: 0 14px;
+    border: 1px dashed rgba(255, 255, 255, .08);
     border-radius: 10px;
+    transition: background .2s ease, border-color .2s ease;
+    text-align: center;
 }
 
 .cat a:hover {
-    border-color: var(--brand);
+    background: rgba(255, 255, 255, .03);
+    border-color: rgba(255, 210, 50, .55);
 }
 
 .quote {
@@ -389,12 +459,34 @@ html {
     font-style: italic;
 }
 
+.site-quote {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-block: clamp(10px, 3.2vh, 22px);
+    margin: clamp(8px, 5vh, 32px) auto 0;
+    padding: 0;
+    color: var(--muted);
+    max-width: 780px;
+}
+
+.site-quote blockquote {
+    margin: 0;
+    line-height: 1.35;
+    font-style: italic;
+    opacity: .95;
+}
+
+.site-quote cite {
+    margin-top: 4px;
+    opacity: .7;
+}
+
 /* =========================================================
    Rodapé
 ========================================================= */
 
 .site-footer {
-    margin-top: 50px;
+    margin-top: 0;
     border-top: 1px solid var(--border);
     background: linear-gradient(180deg, transparent, rgba(255, 255, 255, .03));
 }
