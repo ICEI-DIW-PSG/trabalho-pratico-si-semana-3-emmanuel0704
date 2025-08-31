@@ -257,6 +257,7 @@ html {
 .featured {
     grid-column: 1;
     grid-row: 1;
+    text-align: center;
 }
 
 .featured h2 {
@@ -319,7 +320,6 @@ html {
     grid-column: 1 / -1;
     grid-row: 2;
     margin-top: 8px;
-    text-align: center;
 }
 
 .post-list h3 {
@@ -371,6 +371,12 @@ html {
 .mini small {
     color: var(--muted);
     line-height: 1.25;
+    display: block;
+}
+
+.mini .more {
+    display: block;
+    margin-top: 2px;
 }
 
 .see-all {
@@ -460,6 +466,7 @@ html {
 .cat a:hover {
     background: rgba(255, 255, 255, .03);
     border-color: rgba(255, 210, 50, .55);
+    transform: translateY(-1px);
 }
 
 .quote {
