@@ -130,6 +130,39 @@
                 </p>
             </section>
 
+            <!-- Fale Conosco -->
+
+            <section id="fale-conosco" class="contact-cta">
+                <h3 id="ttl-contato"> Fale conosco </h3>
+
+                <form action="#" class="contact-form" method="POST" novalidate>
+                    <div class="form-grid">
+                        <div class="gorm-field">
+                            <label for="c-nome">Nome</label>
+                            <input type="text" id="c-nome" name="nome" placeholder="Seu nome" autocomplete="name" required>
+                        </div>
+
+                        <div class="gorm-field">
+                            <label for="c-telefone">Telefone</label>
+                            <input type="tel" name="telefone" id="c-telefone" placeholder="(31) 98765-4321" autocomplete="tel" pattern="\(?\d{2}\)?\s?\d{4,5}-?\d{4}">
+                        </div>
+
+                        <div class="form-field full">
+                            <label for="c-email">E-mail</label>
+                            <input type="email" id="c-email" name="email" placeholder="voce@exemplo.com" autocomplete="email" required>
+                        </div>
+
+                        <div class="form-field full">
+                            <textarea name="mensagem" id="c-msg" rows="4" placeholder="Como podemos ajudar?" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button class="btn btn-primario" type="submit"> Enviar mensagem</button>
+                    </div>
+                </form>
+            </section>
+
             <!-- ==== CATEGORIAS ==== -->
 
             <aside id="categorias" class="sidebar" aria-labelledby="ttl-categorias">
