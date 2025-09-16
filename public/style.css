@@ -408,7 +408,7 @@ html {
 }
 
 .see-all .btn:hover, 
-.seeall .btn:focus-visible {
+.see-all .btn:focus-visible {
     background: var(--brand);
     color: #0b0c0e;
     transform: translateY(-1px) scale(1.06);
@@ -518,6 +518,93 @@ html {
 .site-quote cite {
     margin-top: 4px;
     opacity: .7;
+}
+
+/* =========================================================
+   Fale conosco
+========================================================= */
+
+.contact-cta {
+    grid-column: 1 / -1;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: clamp(16px, 2.3vw, 28px);
+    margin-top: 18px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(2px);
+    text-align: center;
+}
+
+.contact-cta h3 {
+    color: var(--brand);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin: 0 0 14px 0;
+    text-align: center;
+}
+
+.contact-form .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    justify-items: center;
+    width: 100%;
+}
+
+.form-field.full {
+    grid-column: 1;
+}
+
+.form-field.full textarea {
+    width: 100%;
+}
+
+.contact-form .form-field {
+    width: min(640px, 100%);
+}
+
+.contact-form label {
+    font-weight: 600;
+    font-size: .95rem;
+    color: var(--muted);
+    text-align: center;
+}
+
+.contact-form textarea{
+    min-height: 140px;
+    resize: vertical;
+}
+
+.contact-form textarea::placeholder{
+    text-align: center;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    background: rgba(255, 255, 255, .09);
+    border-color: var(--brand);
+    box-shadow: 0 0 0 3px rgba(255, 210, 50, .15);
+}
+
+.contact-cta .actions {
+    margin-top: 8px;    
+    display: flex;
+    justify-content: center;
+}
+
+.contact-cta .btn-primario {
+    padding: .9rem 1.6rem;
 }
 
 /* =========================================================
